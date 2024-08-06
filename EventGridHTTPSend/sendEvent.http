@@ -1,0 +1,11 @@
+### Move an address
+POST https://abaranwal-eg-test.eastus-1.eventgrid.azure.net/topics/POCSendHTTPTopic:publish?api-version=2023-06-01-preview
+Content-Type: application/json
+Referer: https://localhost/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroup}}/moveResources?api-version=2021-12-01
+
+{
+    "targetResourceGroup" : "/subscriptions/fa68082f-8ff7-4a25-95c7-ce9da541242f/resourceGroups/nidhirg",
+    "resources" : [
+      "/subscriptions/fa68082f-8ff7-4a25-95c7-ce9da541242f/resourceGroups/TestRG/providers/Microsoft.EdgeOrder/addresses/TestAddressName1"
+    ]
+}
