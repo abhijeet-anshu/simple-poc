@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySQLConnectionPool", "MySQLConnectionPool.csproj", "{9FAD32ED-7D1E-4F78-93D4-5F57D0D3D614}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FAD32ED-7D1E-4F78-93D4-5F57D0D3D614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FAD32ED-7D1E-4F78-93D4-5F57D0D3D614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FAD32ED-7D1E-4F78-93D4-5F57D0D3D614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FAD32ED-7D1E-4F78-93D4-5F57D0D3D614}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {471C9AD1-19DF-4827-8A16-0050752C44E4}
+	EndGlobalSection
+EndGlobal
