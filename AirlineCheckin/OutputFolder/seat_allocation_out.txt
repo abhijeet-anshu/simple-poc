@@ -1,0 +1,79 @@
+Seat Map for SeatAllocatorByLockSkip
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+
+
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+
+
+--------------------
+Unoccupied Seats: 0
+Occupied Seats: 180
+--------------------
+Time taken in Allocating: 192 ms
+
+
+
+---------------------18-08-2024 05:21:33-----------------------------
+Seat Map for SeatAllocator
+X X X X X X X X . . . . . . . . . . . . . . . . . . . . . . 
+X X X X X X X X . . . . . . . . . . . . . . . . . . . . . . 
+X X X X X X X X . . . . . . . . . . . . . . . . . . . . . . 
+
+
+X X X X X X X . . . . . . . . . . . . . . . . . . . . . . . 
+X X X X X X X . . . . . . . . . . . . . . . . . . . . . . . 
+X X X X X X X . . . . . . . . . . . . . . . . . . . . . . . 
+
+
+--------------------
+Unoccupied Seats: 135
+Occupied Seats: 45
+--------------------
+Time taken in Allocating: 746 ms
+
+
+
+---------------------18-08-2024 05:21:39-----------------------------
+Seat Map for SeatAllocatorByLock
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+
+
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+
+
+--------------------
+Unoccupied Seats: 0
+Occupied Seats: 180
+--------------------
+Time taken in Allocating: 860 ms
+
+
+
+---------------------18-08-2024 05:21:44-----------------------------
+Seat Map for SeatAllocatorByLockSkip
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+
+
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+
+
+--------------------
+Unoccupied Seats: 0
+Occupied Seats: 180
+--------------------
+Time taken in Allocating: 169 ms
+
+
+

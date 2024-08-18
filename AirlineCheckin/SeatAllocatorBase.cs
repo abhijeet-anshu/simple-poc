@@ -16,6 +16,8 @@ namespace AirlineCheckin
 
         protected StreamWriter logWriter;
 
+        protected StreamWriter commonWriter;
+
         public void Execute()
         {
             InitializeSeats();
@@ -25,7 +27,7 @@ namespace AirlineCheckin
             AllocateAllSeats();
             stopwatch.Stop();
             PrintSeatMapT(GetSeatMap());
-            WriteOutputLine($"Time taken in Allocating: {stopwatch.ElapsedMilliseconds} ms");
+            WriteOutputCommonLine($"Time taken in Allocating: {stopwatch.ElapsedMilliseconds} ms\n\n\n");
             Dispose();
         }
 
@@ -48,7 +50,12 @@ namespace AirlineCheckin
 
             string logFilePath = Path.Combine(outputFolderPath, $"seat_allocation_{myClassName}_log.txt");
 
+            string commonFilePath = Path.Combine(outputFolderPath, $"seat_allocation_out.txt");
+
             logWriter = new StreamWriter(logFilePath, append: false);
+            commonWriter = new StreamWriter(commonFilePath, append: true);
+
+            commonWriter.WriteLine($"---------------------{DateTime.UtcNow}-----------------------------");
         }
 
         internal virtual void AllocateSeat(int userId)
@@ -114,11 +121,16 @@ namespace AirlineCheckin
             connectionPool.ExecuteNonQuery(query);
         }
 
-        public void PrintSeatMapT(Dictionary<string, string> seatMap)
+        public void PrintLog()
         {
             WriteOutputLine(string.Join("\n", seatAllottmentLog));
 
             WriteOutputLine("--------------------\n\n\n");
+        }
+
+        public void PrintSeatMapT(Dictionary<string, string> seatMap)
+        {
+            WriteOutputCommonLine("Seat Map for " + GetType().Name);
 
             int unoccupiedSeat = 0, occupiedSeat = 0;
             for (int i = 0; i < columns.Length; i++)
@@ -126,7 +138,7 @@ namespace AirlineCheckin
                 for (int row = 1; row <= 30; row++)
                 {
                     string seatId = $"{row}{columns[i]}";
-                    WriteOutput(seatMap[seatId] + " ");
+                    WriteOutputCommon(seatMap[seatId] + " ");
                     if (seatMap[seatId] == ".")
                     {
                         unoccupiedSeat++;
@@ -136,17 +148,17 @@ namespace AirlineCheckin
                         occupiedSeat++;
                     }
                 }
-                WriteOutputLine();
+                WriteOutputCommonLine();
                 if ((i + 1) % 3 == 0)
                 {
-                    WriteOutputLine();
-                    WriteOutputLine();
+                    WriteOutputCommonLine();
+                    WriteOutputCommonLine();
                 }
             }
-            WriteOutputLine("--------------------");
-            WriteOutputLine($"Unoccupied Seats: {unoccupiedSeat}");
-            WriteOutputLine($"Occupied Seats: {occupiedSeat}");
-            WriteOutputLine("--------------------");
+            WriteOutputCommonLine("--------------------");
+            WriteOutputCommonLine($"Unoccupied Seats: {unoccupiedSeat}");
+            WriteOutputCommonLine($"Occupied Seats: {occupiedSeat}");
+            WriteOutputCommonLine("--------------------");
         }
 
         public void PrintSeatMap(Dictionary<string, string> seatMap)
@@ -202,15 +214,27 @@ namespace AirlineCheckin
 
         }
 
-        void WriteOutput(string message)
+        void WriteOutputCommon(string message)
         {
             Console.Write(message);
+            commonWriter.Write(message);
+        }
+
+        void WriteOutputCommonLine(string message = "")
+        {
+            Console.WriteLine(message);
+            commonWriter.WriteLine(message);
+        }
+
+        void WriteOutput(string message)
+        {
+            //Console.Write(message);
             logWriter.Write(message);
         }
 
         void WriteOutputLine(string message = "")
         {
-            Console.WriteLine(message);
+            //Console.WriteLine(message);
             logWriter.WriteLine(message);
         }
 
@@ -218,6 +242,7 @@ namespace AirlineCheckin
         {
             connectionPool.Dispose();
             logWriter.Close();
+            commonWriter.Close();
         }
     }
 }
