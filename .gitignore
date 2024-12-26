@@ -143,3 +143,6 @@ __pycache__
 
 # Not ignore the root build folder
 !/build/**
+
+
+SimpleConsoleApps/*

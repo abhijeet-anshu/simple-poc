@@ -1,0 +1,34 @@
+abaranwal-eg-test.eastus-1.eventgrid.azure.net
+
+publish_operation_uri="https://"$(az eventgrid namespace show -g $resource_group -n $namespace --query "topicsConfiguration.hostname" --output tsv)"/topics/"$topic:publish?api-version=2023-06-01-preview
+
+abaranwal-test
+
+az account set --subscription "2b76d0a7-a394-4593-b36c-91d11cab1f89"
+
+resource_group="abaranwal-test"
+
+namespace = "abaranwal-eg-test"
+
+topic="POCSendHTTPTopic"
+
+publish_operation_uri="https://"$(az eventgrid namespace show -g $resource_group -n $namespace --query "topicsConfiguration.hostname" --output tsv)"/topics/"$topic:publish?api-version=2023-06-01-preview
+
+echo $publish_operation_uri 
+https://abaranwal-eg-test.eastus-1.eventgrid.azure.net/topics/POCSendHTTPTopic:publish?api-version=2023-06-01-preview
+
+az eventgrid topic show --name $topic -g $resource_group--query "endpoint"
+
+https://abaranwal-eg-test.eastus-1.eventgrid.azure.net/topics/POCSendHTTPTopic:publish?api-version=2023-06-01-preview
+
+
+System.Exception
+  HResult=0x80131500
+  Message=UnauthorizedCode: Unauthorized. ResponsePhrase: Unauthorized
+  Source=EventGridHTTPSend
+  StackTrace:
+   at EventGridHTTPSend.Program.<SendEventAsync>d__7.MoveNext() in C:\Users\abaranwal\pocs\EventGridHTTPSend\Program.cs:line 84
+   at EventGridHTTPSend.Program.<Main>d__0.MoveNext() in C:\Users\abaranwal\pocs\EventGridHTTPSend\Program.cs:line 15
+
+
+{"id":"75c792f2-df82-4e70-bed0-0b96010709c1","subject":"Door1","eventType":"Contoso.Items.ItemReceived","data":{"itemSku":"Contoso Item SKU #1"},"dataVersion":"2.0","metadataVersion":"1","eventTime":"2024-08-06T12:13:13.8226013+00:00","topic":"/subscriptions/2b76d0a7-a394-4593-b36c-91d11cab1f89/resourceGroups/abaranwal-test/providers/Microsoft.EventGrid/domains/abaranwal-eg-domain-test/topics/topic101"}

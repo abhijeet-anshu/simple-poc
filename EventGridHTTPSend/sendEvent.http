@@ -1,0 +1,7 @@
+### Move an address
+POST https://abaranwal-eg-test.eastus-1.eventgrid.azure.net/topics/POCSendHTTPTopic:publish?api-version=2023-06-01-preview
+Content-Type: application/json
+Referer: https://localhost/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroup}}/moveResources?api-version=2021-12-01
+
+{ "specversion": "1.0", "id": "'"$RANDOM"'", "type": "com.yourcompany.order.ordercreatedV2", "source" : "/mycontext", "subject": "orders/O-234595", "time": "'`date +%Y-%m-%dT%H:%M:%SZ`'", 
+"datacontenttype" : "application/json", "data":{ "orderId": "O-234595", "url": "https://yourcompany.com/orders/o-234595"}} 
