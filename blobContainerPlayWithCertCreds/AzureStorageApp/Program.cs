@@ -27,11 +27,6 @@ class Program
 
         try
         {
-
-            
-            
-
-
             // Authenticate with credentials
             var clientSecretCredential = new ClientSecretCredential(tenantId, clientId, clientSecret);
             var blobServiceClient = new BlobServiceClient(
